@@ -1,0 +1,23 @@
+{
+  "scriptUpdater": {
+    "skipped": []
+  },
+  "installed": [
+    "skill",
+    "test",
+    "schema",
+    "event",
+    "view"
+  ],
+  "dependencies": [
+    {
+      "id": "**",
+      "namespace": "heartwood"
+    }
+  ],
+  "events": {
+    "listenerCacheKeys": {
+      "httpsdevelopermercuryspruceai": ""
+    }
+  }
+}
