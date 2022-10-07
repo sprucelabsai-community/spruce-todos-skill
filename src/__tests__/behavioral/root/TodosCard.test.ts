@@ -1,19 +1,30 @@
+import { interactor } from '@sprucelabs/heartwood-view-controllers'
 import { fake } from '@sprucelabs/spruce-test-fixtures'
 import { AbstractSpruceFixtureTest } from '@sprucelabs/spruce-test-fixtures'
 import { test, assert } from '@sprucelabs/test-utils'
+import SpyTodosCardViewController from '../../support/SpyTodosCardViewController'
 
 @fake.login()
 export default class TodosCardTest extends AbstractSpruceFixtureTest {
-	@test()
-	protected static async canCreateTodosCard() {
-		const todosCard = new TodosCard()
-		assert.isTruthy(todosCard)
+	protected static async beforeEach() {
+		await super.beforeEach()
+		this.views.setController('todos.todos-card', SpyTodosCardViewController)
 	}
 
 	@test()
-	protected static async yourNextTest() {
-		assert.isTrue(false)
+	protected static async hittingEnterInNewInputAddsRow() {
+		const vc = this.views.Controller(
+			'todos.todos-card',
+			{}
+		) as SpyTodosCardViewController
+
+		const listVc = vc.getListVc()
+		const rowVc = listVc.getRowVc('new')
+
+		await interactor.keyDownOnInputInRow({
+			cell: 0,
+			key: 'Enter',
+			vc: rowVc,
+		})
 	}
 }
-
-class TodosCard {}

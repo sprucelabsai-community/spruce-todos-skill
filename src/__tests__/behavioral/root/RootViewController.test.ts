@@ -2,7 +2,7 @@ import { listAssert, vcAssert } from '@sprucelabs/heartwood-view-controllers'
 import { AbstractSpruceFixtureTest } from '@sprucelabs/spruce-test-fixtures'
 import { test } from '@sprucelabs/test-utils'
 import RootSkillViewController from '../../../root/Root.svc'
-import TodosCardViewController from '../../../root/TodosCard.vc'
+import SpyTodosCardViewController from '../../support/SpyTodosCardViewController'
 
 export default class RootViewControllerTest extends AbstractSpruceFixtureTest {
 	private static vc: SpyRootViewController
@@ -51,11 +51,5 @@ class SpyRootViewController extends RootSkillViewController {
 	}
 	public getCardVc() {
 		return this.cardVc as SpyTodosCardViewController
-	}
-}
-
-class SpyTodosCardViewController extends TodosCardViewController {
-	public getListVc() {
-		return this.listVc
 	}
 }
