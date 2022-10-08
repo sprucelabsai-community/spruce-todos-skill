@@ -28,6 +28,7 @@ export default class TodosCardViewController extends AbstractViewController<Card
 							textInput: {
 								name: 'todo',
 								placeholder: 'Add your todo...',
+								onKeyDown: () => {},
 							},
 						},
 						{
@@ -38,6 +39,10 @@ export default class TodosCardViewController extends AbstractViewController<Card
 							},
 						},
 					],
+				},
+				{
+					id: 'test',
+					cells: [],
 				},
 			],
 		})

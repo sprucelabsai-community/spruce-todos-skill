@@ -6,25 +6,35 @@ import SpyTodosCardViewController from '../../support/SpyTodosCardViewController
 
 @fake.login()
 export default class TodosCardTest extends AbstractSpruceFixtureTest {
+	protected static vc: SpyTodosCardViewController
+
 	protected static async beforeEach() {
 		await super.beforeEach()
 		this.views.setController('todos.todos-card', SpyTodosCardViewController)
+		this.vc = this.views.Controller(
+			'todos.todos-card',
+			{}
+		) as SpyTodosCardViewController
 	}
 
 	@test()
 	protected static async hittingEnterInNewInputAddsRow() {
-		const vc = this.views.Controller(
-			'todos.todos-card',
-			{}
-		) as SpyTodosCardViewController
-
-		const listVc = vc.getListVc()
-		const rowVc = listVc.getRowVc('new')
+		const rowVc = this.listVc.getRowVc('new')
 
 		await interactor.keyDownOnInputInRow({
 			cell: 0,
 			key: 'Enter',
 			vc: rowVc,
 		})
+
+		this.assertTotalRows(2)
+	}
+
+	private static assertTotalRows(expected: number) {
+		assert.isEqual(this.listVc.getTotalRows(), expected)
+	}
+
+	private static get listVc() {
+		return this.vc.getListVc()
 	}
 }
