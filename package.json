@@ -102,7 +102,9 @@
           "sheetId": "1a15rdbHtpQH9roOhYC6_7fczQU4jeVwM2SBtuIpQCP0",
           "worksheetId": 0,
           "testMap": {
-            "newRowRendersAddButton": "B2"
+            "newRowRendersAddButton": "B2",
+            "pressingEnterDoesNotAddRowIfNoTodo": "B3",
+            "pressingAddWithoutTodoDoesNotAdd": "B4"
           }
         }
       ]

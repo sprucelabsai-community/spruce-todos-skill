@@ -2,6 +2,7 @@ import {
 	AbstractViewController,
 	Card,
 	CardViewController,
+	CellInputKeyDownOptions,
 	ListViewController,
 	ViewControllerOptions,
 } from '@sprucelabs/heartwood-view-controllers'
@@ -28,7 +29,7 @@ export default class TodosCardViewController extends AbstractViewController<Card
 							textInput: {
 								name: 'todo',
 								placeholder: 'Add your todo...',
-								onKeyDown: () => {},
+								onKeyDown: this.handleKeyDown.bind(this),
 							},
 						},
 						{
@@ -36,16 +37,33 @@ export default class TodosCardViewController extends AbstractViewController<Card
 								id: 'add',
 								label: 'Add',
 								type: 'primary',
+								onClick: this.optionallyAddNewTodo.bind(this),
 							},
 						},
 					],
 				},
-				{
-					id: 'test',
-					cells: [],
-				},
 			],
 		})
+	}
+
+	private async handleKeyDown(options: CellInputKeyDownOptions) {
+		const { key } = options
+
+		if (key === 'Enter') {
+			this.optionallyAddNewTodo()
+		}
+	}
+
+	private optionallyAddNewTodo() {
+		const rowVc = this.listVc.getRowVc('new')
+		const { todo } = rowVc.getValues()
+
+		if (todo) {
+			this.listVc.addRow({
+				id: 'test',
+				cells: [],
+			})
+		}
 	}
 
 	private CardVc(): CardViewController {
