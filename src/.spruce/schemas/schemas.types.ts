@@ -873,8 +873,8 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 		
 		interface AddEmitPayload {
 			
-				/** Update me. */
-				'todo'?: string| undefined | null
+				
+				'todo': string
 		}
 
 		interface AddEmitPayloadSchema extends SpruceSchema.Schema {
@@ -883,10 +883,10 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			namespace: 'Todos',
 			name: '',
 			    fields: {
-			            /** Update me. */
+			            /** . */
 			            'todo': {
-			                label: 'Update me',
 			                type: 'text',
+			                isRequired: true,
 			                options: undefined
 			            },
 			    }
@@ -905,7 +905,7 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 				/** Source. */
 				'source'?: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSource| undefined | null
 				
-				'payload'?: SpruceSchemas.Todos.v2022_10_08.AddEmitPayload| undefined | null
+				'payload': SpruceSchemas.Todos.v2022_10_08.AddEmitPayload
 		}
 
 		interface AddEmitTargetAndPayloadSchema extends SpruceSchema.Schema {
@@ -923,41 +923,13 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			            /** . */
 			            'payload': {
 			                type: 'schema',
+			                isRequired: true,
 			                options: {schema: SpruceSchemas.Todos.v2022_10_08.AddEmitPayloadSchema,}
 			            },
 			    }
 		}
 
 		interface AddEmitTargetAndPayloadEntity extends SchemaEntity<SpruceSchemas.Todos.v2022_10_08.AddEmitTargetAndPayloadSchema> {}
-
-	}
-
-
-	namespace SpruceSchemas.Todos.v2022_10_08 {
-
-		
-		interface AddResponsePayload {
-			
-				/** Update me. */
-				'todo'?: string| undefined | null
-		}
-
-		interface AddResponsePayloadSchema extends SpruceSchema.Schema {
-			id: 'addResponsePayload',
-			version: 'v2022_10_08',
-			namespace: 'Todos',
-			name: '',
-			    fields: {
-			            /** Update me. */
-			            'todo': {
-			                label: 'Update me',
-			                type: 'text',
-			                options: undefined
-			            },
-			    }
-		}
-
-		interface AddResponsePayloadEntity extends SchemaEntity<SpruceSchemas.Todos.v2022_10_08.AddResponsePayloadSchema> {}
 
 	}
 
@@ -1032,6 +1004,35 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 		}
 
 		interface TodoEntity extends SchemaEntity<SpruceSchemas.Todos.v2022_10_08.TodoSchema> {}
+
+	}
+
+
+	namespace SpruceSchemas.Todos.v2022_10_08 {
+
+		
+		interface AddResponsePayload {
+			
+				
+				'todo': SpruceSchemas.Todos.v2022_10_08.Todo
+		}
+
+		interface AddResponsePayloadSchema extends SpruceSchema.Schema {
+			id: 'addResponsePayload',
+			version: 'v2022_10_08',
+			namespace: 'Todos',
+			name: '',
+			    fields: {
+			            /** . */
+			            'todo': {
+			                type: 'schema',
+			                isRequired: true,
+			                options: {schema: SpruceSchemas.Todos.v2022_10_08.TodoSchema,}
+			            },
+			    }
+		}
+
+		interface AddResponsePayloadEntity extends SchemaEntity<SpruceSchemas.Todos.v2022_10_08.AddResponsePayloadSchema> {}
 
 	}
 

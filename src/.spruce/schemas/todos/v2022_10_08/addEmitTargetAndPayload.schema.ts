@@ -19,6 +19,7 @@ const addEmitTargetAndPayloadSchema: SpruceSchemas.Todos.v2022_10_08.AddEmitTarg
 	            /** . */
 	            'payload': {
 	                type: 'schema',
+	                isRequired: true,
 	                options: {schema: addEmitPayloadSchema_v2022_10_08,}
 	            },
 	    }

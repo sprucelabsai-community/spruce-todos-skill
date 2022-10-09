@@ -1,7 +1,7 @@
 import { SchemaRegistry } from '@sprucelabs/schema'
 import { SpruceSchemas } from '../../schemas.types'
 
-
+import todoSchema_v2022_10_08 from '#spruce/schemas/todos/v2022_10_08/todo.schema'
 
 const addResponsePayloadSchema: SpruceSchemas.Todos.v2022_10_08.AddResponsePayloadSchema  = {
 	id: 'addResponsePayload',
@@ -9,11 +9,11 @@ const addResponsePayloadSchema: SpruceSchemas.Todos.v2022_10_08.AddResponsePaylo
 	namespace: 'Todos',
 	name: '',
 	    fields: {
-	            /** Update me. */
+	            /** . */
 	            'todo': {
-	                label: 'Update me',
-	                type: 'text',
-	                options: undefined
+	                type: 'schema',
+	                isRequired: true,
+	                options: {schema: todoSchema_v2022_10_08,}
 	            },
 	    }
 }

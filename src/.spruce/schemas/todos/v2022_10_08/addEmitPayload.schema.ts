@@ -9,10 +9,10 @@ const addEmitPayloadSchema: SpruceSchemas.Todos.v2022_10_08.AddEmitPayloadSchema
 	namespace: 'Todos',
 	name: '',
 	    fields: {
-	            /** Update me. */
+	            /** . */
 	            'todo': {
-	                label: 'Update me',
 	                type: 'text',
+	                isRequired: true,
 	                options: undefined
 	            },
 	    }

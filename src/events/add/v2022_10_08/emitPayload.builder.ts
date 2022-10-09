@@ -5,7 +5,7 @@ const addEmitPayloadBuilder = buildSchema({
 	fields: {
 		todo: {
 			type: 'text',
-			label: 'Update me',
+			isRequired: true,
 		},
 	},
 })
