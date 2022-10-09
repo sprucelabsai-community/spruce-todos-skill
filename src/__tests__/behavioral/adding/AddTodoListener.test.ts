@@ -1,7 +1,7 @@
 import { fake } from '@sprucelabs/spruce-test-fixtures'
 import { AbstractSpruceFixtureTest } from '@sprucelabs/spruce-test-fixtures'
 import { test, assert, generateId } from '@sprucelabs/test-utils'
-import TodosStore from '../../stores/Todos.store'
+import TodosStore from '../../../stores/Todos.store'
 
 @fake.login()
 export default class AddTodoListenerTest extends AbstractSpruceFixtureTest {

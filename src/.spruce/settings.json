@@ -17,14 +17,6 @@
     }
   ],
   "events": {
-    "lastSync": {
-      "contractDestinationDir": "#spruce/events",
-      "schemaTypesLookupDir": "#spruce/schemas",
-      "skillEventContractTypesFile": "@sprucelabs/mercury-types/build/types/mercury.types",
-      "eventBuilderFile": "@sprucelabs/mercury-types"
-    },
-    "listenerCacheKeys": {
-      "httpsdevelopermercuryspruceai": "addtodosv2022_10_08"
-    }
+    "lastSync": {}
   }
 }

@@ -1,5 +1,5 @@
 import { buildSchema } from '@sprucelabs/schema'
-import todoBuilder from '../../../schemas/v2022_10_08/todo.builder'
+import todoBuilder from '../../../../schemas/v2022_10_08/todo.builder'
 
 const addResponsePayloadBuilder = buildSchema({
 	id: 'addResponsePayload',
