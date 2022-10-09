@@ -6,6 +6,7 @@ import addResponsePayloadSchema from '#spruce/schemas/todos/v2022_10_08/addRespo
 const addEventContract = buildEventContract({
 	eventSignatures: {
 		'todos.add::v2022_10_08': {
+			isGlobal: true,
 			emitPayloadSchema: addEmitTargetAndPayloadSchema,
 			responsePayloadSchema: addResponsePayloadSchema,
 			emitPermissionContract: buildPermissionContract({
@@ -14,27 +15,13 @@ const addEventContract = buildEventContract({
 				requireAllPermissions: false,
 				permissions: [
 					{
-						id: 'can-high-five',
+						id: 'can-emit-add-permission',
 						name: 'Can give high five',
 						description: 'Will this person be allowed to high five?',
 						defaults: {
-							skill: false,
-						},
-						requireAllStatuses: false,
-					},
-				],
-			}),
-			listenPermissionContract: buildPermissionContract({
-				id: 'addListenPermissions',
-				name: 'Add',
-				requireAllPermissions: false,
-				permissions: [
-					{
-						id: 'can-high-five',
-						name: 'Can give high five',
-						description: 'Will this person be allowed to high five?',
-						defaults: {
-							skill: false,
+							loggedIn: {
+								default: true,
+							},
 						},
 						requireAllStatuses: false,
 					},

@@ -871,35 +871,6 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 	namespace SpruceSchemas.Todos.v2022_10_08 {
 
 		
-		interface AddEmitTarget {
-			
-				/** Update me. */
-				'aTextField'?: string| undefined | null
-		}
-
-		interface AddEmitTargetSchema extends SpruceSchema.Schema {
-			id: 'addEmitTarget',
-			version: 'v2022_10_08',
-			namespace: 'Todos',
-			name: '',
-			    fields: {
-			            /** Update me. */
-			            'aTextField': {
-			                label: 'Update me',
-			                type: 'text',
-			                options: undefined
-			            },
-			    }
-		}
-
-		interface AddEmitTargetEntity extends SchemaEntity<SpruceSchemas.Todos.v2022_10_08.AddEmitTargetSchema> {}
-
-	}
-
-
-	namespace SpruceSchemas.Todos.v2022_10_08 {
-
-		
 		interface AddEmitPayload {
 			
 				/** Update me. */
@@ -934,8 +905,6 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 				/** Source. */
 				'source'?: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSource| undefined | null
 				
-				'target'?: SpruceSchemas.Todos.v2022_10_08.AddEmitTarget| undefined | null
-				
 				'payload'?: SpruceSchemas.Todos.v2022_10_08.AddEmitPayload| undefined | null
 		}
 
@@ -950,11 +919,6 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			                label: 'Source',
 			                type: 'schema',
 			                options: {schema: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSourceSchema,}
-			            },
-			            /** . */
-			            'target': {
-			                type: 'schema',
-			                options: {schema: SpruceSchemas.Todos.v2022_10_08.AddEmitTargetSchema,}
 			            },
 			            /** . */
 			            'payload': {
@@ -975,7 +939,7 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 		interface AddResponsePayload {
 			
 				/** Update me. */
-				'aTextField'?: string| undefined | null
+				'todo'?: string| undefined | null
 		}
 
 		interface AddResponsePayloadSchema extends SpruceSchema.Schema {
@@ -985,7 +949,7 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			name: '',
 			    fields: {
 			            /** Update me. */
-			            'aTextField': {
+			            'todo': {
 			                label: 'Update me',
 			                type: 'text',
 			                options: undefined

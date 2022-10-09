@@ -10,7 +10,7 @@ const addResponsePayloadSchema: SpruceSchemas.Todos.v2022_10_08.AddResponsePaylo
 	name: '',
 	    fields: {
 	            /** Update me. */
-	            'aTextField': {
+	            'todo': {
 	                label: 'Update me',
 	                type: 'text',
 	                options: undefined
