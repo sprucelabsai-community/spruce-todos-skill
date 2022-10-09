@@ -4,6 +4,8 @@
   },
   "installed": [
     "skill",
-    "test"
+    "test",
+    "schema",
+    "event"
   ]
 }

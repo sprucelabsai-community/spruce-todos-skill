@@ -6,7 +6,7 @@
     "namespace": "todos",
     "upgradeIgnoreList": [
       "globby"
-    ] 
+    ]
   },
   "homepage": "https://github.com/[YOUR REPO PATH]",
   "bugs": {
@@ -45,7 +45,10 @@
   },
   "dependencies": {
     "@sprucelabs/error": "^5.0.523",
+    "@sprucelabs/mercury-client": "^31.0.250",
+    "@sprucelabs/mercury-core-events": "^12.2.69",
     "@sprucelabs/mercury-types": "^35.0.195",
+    "@sprucelabs/schema": "^28.5.35",
     "@sprucelabs/spruce-core-schemas": "^34.2.149",
     "@sprucelabs/spruce-event-plugin": "^50.0.18",
     "@sprucelabs/spruce-event-utils": "^27.0.229",
@@ -102,11 +105,9 @@
         {
           "sheetId": "1DoWM7mYgGDa-PJXptLomrZmbIBZiuxS1YiAsRXU2Gm0",
           "worksheetId": 889384139,
-          "testMap": {
-          }
+          "testMap": {}
         }
       ]
     ]
-
   }
 }
