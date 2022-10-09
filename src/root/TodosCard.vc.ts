@@ -81,16 +81,16 @@ export default class TodosCardViewController extends AbstractViewController<Card
 					},
 				],
 			})
+
+			const client = await this.connectToApi()
+			await client.emitAndFlattenResponses('todos.add::v2022_10_08', {
+				payload: {
+					todo,
+				},
+			})
 		}
 
 		this.newRowVc.setValue('todo', '')
-
-		const client = await this.connectToApi()
-		await client.emitAndFlattenResponses('todos.add::v2022_10_08', {
-			payload: {
-				todo: 'hello world!',
-			},
-		})
 	}
 
 	private get newRowVc() {

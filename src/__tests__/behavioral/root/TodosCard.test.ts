@@ -3,14 +3,16 @@ import {
 	KeyboardKey,
 	listAssert,
 } from '@sprucelabs/heartwood-view-controllers'
-import { eventFaker, fake } from '@sprucelabs/spruce-test-fixtures'
+import { fake } from '@sprucelabs/spruce-test-fixtures'
 import { AbstractSpruceFixtureTest } from '@sprucelabs/spruce-test-fixtures'
 import { test, assert, generateId } from '@sprucelabs/test-utils'
+import EventFaker, { AddTodoTargetAndPayload } from '../../support/EventFaker'
 import SpyTodosCardViewController from '../../support/SpyTodosCardViewController'
 
 @fake.login()
 export default class TodosCardTest extends AbstractSpruceFixtureTest {
 	protected static vc: SpyTodosCardViewController
+	private static eventFaker: EventFaker
 
 	private static get newRowVc() {
 		return this.listVc.getRowVc('new')
@@ -18,23 +20,14 @@ export default class TodosCardTest extends AbstractSpruceFixtureTest {
 
 	protected static async beforeEach() {
 		await super.beforeEach()
+		this.eventFaker = new EventFaker()
 		this.views.setController('todos.todos-card', SpyTodosCardViewController)
 		this.vc = this.views.Controller(
 			'todos.todos-card',
 			{}
 		) as SpyTodosCardViewController
 
-		await eventFaker.on('todos.add::v2022_10_08', () => {
-			return {
-				todo: {
-					id: generateId(),
-					todo: generateId(),
-					target: {
-						personId: generateId(),
-					},
-				},
-			}
-		})
+		await this.eventFaker.fakeAddTodo()
 	}
 
 	@test()
@@ -93,14 +86,15 @@ export default class TodosCardTest extends AbstractSpruceFixtureTest {
 
 	@test()
 	protected static async addingTodoEmitsAddEvent() {
-		let wasHit = false
-		await eventFaker.on('todos.add::v2022_10_08', () => {
-			wasHit = true
+		let passedPayload: AddTodoTargetAndPayload['payload'] | undefined
+
+		await this.eventFaker.fakeAddTodo(({ payload }) => {
+			passedPayload = payload
 		})
 
-		await this.addRandomTodo()
+		const todo = await this.addRandomTodo()
 
-		assert.isTrue(wasHit)
+		assert.isEqual(passedPayload?.todo, todo)
 	}
 
 	private static async addRandomTodo() {

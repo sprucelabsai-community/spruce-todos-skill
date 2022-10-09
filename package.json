@@ -107,7 +107,8 @@
             "pressingAddWithoutTodoDoesNotAdd": "B4",
             "todoRowHasDeleteButton": "B7",
             "addedTodoRowHasCheckbox": "B8",
-            "pressingEnterDoesNotAddRowIfNoTodo": "B16"
+            "pressingEnterDoesNotAddRowIfNoTodo": "B16",
+            "addingTodoEmitsAddEvent": "E3"
           }
         }
       ]
