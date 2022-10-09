@@ -1,4 +1,5 @@
 import { buildSchema } from '@sprucelabs/schema'
+import todoTargetBuilder from './todoTarget.builder'
 
 export default buildSchema({
 	id: 'todo',
@@ -12,6 +13,12 @@ export default buildSchema({
 			type: 'text',
 			isRequired: true,
 		},
-		target: {},
+		target: {
+			type: 'schema',
+			isRequired: true,
+			options: {
+				schema: todoTargetBuilder,
+			},
+		},
 	},
 })

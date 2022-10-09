@@ -965,12 +965,43 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 	namespace SpruceSchemas.Todos.v2022_10_08 {
 
 		
+		interface TodoTarget {
+			
+				
+				'personId': string
+		}
+
+		interface TodoTargetSchema extends SpruceSchema.Schema {
+			id: 'todoTarget',
+			version: 'v2022_10_08',
+			namespace: 'Todos',
+			name: 'Todo Target',
+			    fields: {
+			            /** . */
+			            'personId': {
+			                type: 'id',
+			                isRequired: true,
+			                options: undefined
+			            },
+			    }
+		}
+
+		interface TodoTargetEntity extends SchemaEntity<SpruceSchemas.Todos.v2022_10_08.TodoTargetSchema> {}
+
+	}
+
+
+	namespace SpruceSchemas.Todos.v2022_10_08 {
+
+		
 		interface Todo {
 			
-				/** First Field. */
-				'fieldName1': string
-				/** Second Field. A hint */
-				'fieldName2': number
+				
+				'id': string
+				
+				'todo': string
+				
+				'target': SpruceSchemas.Todos.v2022_10_08.TodoTarget
 		}
 
 		interface TodoSchema extends SpruceSchema.Schema {
@@ -979,20 +1010,23 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			namespace: 'Todos',
 			name: 'Todo',
 			    fields: {
-			            /** First Field. */
-			            'fieldName1': {
-			                label: 'First Field',
+			            /** . */
+			            'id': {
+			                type: 'id',
+			                isRequired: true,
+			                options: undefined
+			            },
+			            /** . */
+			            'todo': {
 			                type: 'text',
 			                isRequired: true,
 			                options: undefined
 			            },
-			            /** Second Field. A hint */
-			            'fieldName2': {
-			                label: 'Second Field',
-			                type: 'number',
+			            /** . */
+			            'target': {
+			                type: 'schema',
 			                isRequired: true,
-			                hint: 'A hint',
-			                options: undefined
+			                options: {schema: SpruceSchemas.Todos.v2022_10_08.TodoTargetSchema,}
 			            },
 			    }
 		}

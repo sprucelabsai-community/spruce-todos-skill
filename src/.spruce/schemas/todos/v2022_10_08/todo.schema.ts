@@ -1,7 +1,7 @@
 import { SchemaRegistry } from '@sprucelabs/schema'
 import { SpruceSchemas } from '../../schemas.types'
 
-
+import todoTargetSchema_v2022_10_08 from '#spruce/schemas/todos/v2022_10_08/todoTarget.schema'
 
 const todoSchema: SpruceSchemas.Todos.v2022_10_08.TodoSchema  = {
 	id: 'todo',
@@ -9,20 +9,23 @@ const todoSchema: SpruceSchemas.Todos.v2022_10_08.TodoSchema  = {
 	namespace: 'Todos',
 	name: 'Todo',
 	    fields: {
-	            /** First Field. */
-	            'fieldName1': {
-	                label: 'First Field',
+	            /** . */
+	            'id': {
+	                type: 'id',
+	                isRequired: true,
+	                options: undefined
+	            },
+	            /** . */
+	            'todo': {
 	                type: 'text',
 	                isRequired: true,
 	                options: undefined
 	            },
-	            /** Second Field. A hint */
-	            'fieldName2': {
-	                label: 'Second Field',
-	                type: 'number',
+	            /** . */
+	            'target': {
+	                type: 'schema',
 	                isRequired: true,
-	                hint: 'A hint',
-	                options: undefined
+	                options: {schema: todoTargetSchema_v2022_10_08,}
 	            },
 	    }
 }
