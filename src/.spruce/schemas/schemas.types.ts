@@ -283,43 +283,6 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 	namespace SpruceSchemas.Heartwood.v2021_02_11 {
 
 		
-		interface GetActiveThemeEmitTargetAndPayload {
-			
-				/** Source. */
-				'source'?: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSource| undefined | null
-				
-				'target': SpruceSchemas.Heartwood.v2021_02_11.GetActiveThemeEmitTarget
-		}
-
-		interface GetActiveThemeEmitTargetAndPayloadSchema extends SpruceSchema.Schema {
-			id: 'getActiveThemeEmitTargetAndPayload',
-			version: 'v2021_02_11',
-			namespace: 'Heartwood',
-			name: '',
-			    fields: {
-			            /** Source. */
-			            'source': {
-			                label: 'Source',
-			                type: 'schema',
-			                options: {schema: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSourceSchema,}
-			            },
-			            /** . */
-			            'target': {
-			                type: 'schema',
-			                isRequired: true,
-			                options: {schema: SpruceSchemas.Heartwood.v2021_02_11.GetActiveThemeEmitTargetSchema,}
-			            },
-			    }
-		}
-
-		interface GetActiveThemeEmitTargetAndPayloadEntity extends SchemaEntity<SpruceSchemas.Heartwood.v2021_02_11.GetActiveThemeEmitTargetAndPayloadSchema> {}
-
-	}
-
-
-	namespace SpruceSchemas.Heartwood.v2021_02_11 {
-
-		
 		interface GetActiveThemeResponsePayload {
 			
 				
@@ -723,51 +686,6 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 	namespace SpruceSchemas.Heartwood.v2021_02_11 {
 
 		
-		interface UpsertThemeEmitTargetAndPayload {
-			
-				/** Source. */
-				'source'?: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSource| undefined | null
-				
-				'target': SpruceSchemas.Heartwood.v2021_02_11.UpsertThemeEmitTarget
-				
-				'payload': SpruceSchemas.Heartwood.v2021_02_11.UpsertThemeEmitPayload
-		}
-
-		interface UpsertThemeEmitTargetAndPayloadSchema extends SpruceSchema.Schema {
-			id: 'upsertThemeEmitTargetAndPayload',
-			version: 'v2021_02_11',
-			namespace: 'Heartwood',
-			name: '',
-			    fields: {
-			            /** Source. */
-			            'source': {
-			                label: 'Source',
-			                type: 'schema',
-			                options: {schema: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSourceSchema,}
-			            },
-			            /** . */
-			            'target': {
-			                type: 'schema',
-			                isRequired: true,
-			                options: {schema: SpruceSchemas.Heartwood.v2021_02_11.UpsertThemeEmitTargetSchema,}
-			            },
-			            /** . */
-			            'payload': {
-			                type: 'schema',
-			                isRequired: true,
-			                options: {schema: SpruceSchemas.Heartwood.v2021_02_11.UpsertThemeEmitPayloadSchema,}
-			            },
-			    }
-		}
-
-		interface UpsertThemeEmitTargetAndPayloadEntity extends SchemaEntity<SpruceSchemas.Heartwood.v2021_02_11.UpsertThemeEmitTargetAndPayloadSchema> {}
-
-	}
-
-
-	namespace SpruceSchemas.Heartwood.v2021_02_11 {
-
-		
 		interface Theme {
 			
 				
@@ -842,6 +760,51 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 	namespace SpruceSchemas.Heartwood.v2021_02_11 {
 
 		
+		interface UpsertThemeEmitTargetAndPayload {
+			
+				/** Source. */
+				'source'?: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSource| undefined | null
+				
+				'target': SpruceSchemas.Heartwood.v2021_02_11.UpsertThemeEmitTarget
+				
+				'payload': SpruceSchemas.Heartwood.v2021_02_11.UpsertThemeEmitPayload
+		}
+
+		interface UpsertThemeEmitTargetAndPayloadSchema extends SpruceSchema.Schema {
+			id: 'upsertThemeEmitTargetAndPayload',
+			version: 'v2021_02_11',
+			namespace: 'Heartwood',
+			name: '',
+			    fields: {
+			            /** Source. */
+			            'source': {
+			                label: 'Source',
+			                type: 'schema',
+			                options: {schema: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSourceSchema,}
+			            },
+			            /** . */
+			            'target': {
+			                type: 'schema',
+			                isRequired: true,
+			                options: {schema: SpruceSchemas.Heartwood.v2021_02_11.UpsertThemeEmitTargetSchema,}
+			            },
+			            /** . */
+			            'payload': {
+			                type: 'schema',
+			                isRequired: true,
+			                options: {schema: SpruceSchemas.Heartwood.v2021_02_11.UpsertThemeEmitPayloadSchema,}
+			            },
+			    }
+		}
+
+		interface UpsertThemeEmitTargetAndPayloadEntity extends SchemaEntity<SpruceSchemas.Heartwood.v2021_02_11.UpsertThemeEmitTargetAndPayloadSchema> {}
+
+	}
+
+
+	namespace SpruceSchemas.Heartwood.v2021_02_11 {
+
+		
 		interface UpsertThemeResponsePayload {
 			
 				
@@ -864,6 +827,213 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 		}
 
 		interface UpsertThemeResponsePayloadEntity extends SchemaEntity<SpruceSchemas.Heartwood.v2021_02_11.UpsertThemeResponsePayloadSchema> {}
+
+	}
+
+
+	namespace SpruceSchemas.Heartwood.v2021_02_11 {
+
+		
+		interface GetActiveThemeEmitTargetAndPayload {
+			
+				/** Source. */
+				'source'?: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSource| undefined | null
+				
+				'target': SpruceSchemas.Heartwood.v2021_02_11.GetActiveThemeEmitTarget
+		}
+
+		interface GetActiveThemeEmitTargetAndPayloadSchema extends SpruceSchema.Schema {
+			id: 'getActiveThemeEmitTargetAndPayload',
+			version: 'v2021_02_11',
+			namespace: 'Heartwood',
+			name: '',
+			    fields: {
+			            /** Source. */
+			            'source': {
+			                label: 'Source',
+			                type: 'schema',
+			                options: {schema: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSourceSchema,}
+			            },
+			            /** . */
+			            'target': {
+			                type: 'schema',
+			                isRequired: true,
+			                options: {schema: SpruceSchemas.Heartwood.v2021_02_11.GetActiveThemeEmitTargetSchema,}
+			            },
+			    }
+		}
+
+		interface GetActiveThemeEmitTargetAndPayloadEntity extends SchemaEntity<SpruceSchemas.Heartwood.v2021_02_11.GetActiveThemeEmitTargetAndPayloadSchema> {}
+
+	}
+
+
+	namespace SpruceSchemas.Todos.v2022_10_08 {
+
+		
+		interface AddEmitTarget {
+			
+				/** Update me. */
+				'aTextField'?: string| undefined | null
+		}
+
+		interface AddEmitTargetSchema extends SpruceSchema.Schema {
+			id: 'addEmitTarget',
+			version: 'v2022_10_08',
+			namespace: 'Todos',
+			name: '',
+			    fields: {
+			            /** Update me. */
+			            'aTextField': {
+			                label: 'Update me',
+			                type: 'text',
+			                options: undefined
+			            },
+			    }
+		}
+
+		interface AddEmitTargetEntity extends SchemaEntity<SpruceSchemas.Todos.v2022_10_08.AddEmitTargetSchema> {}
+
+	}
+
+
+	namespace SpruceSchemas.Todos.v2022_10_08 {
+
+		
+		interface AddEmitPayload {
+			
+				/** Update me. */
+				'todo'?: string| undefined | null
+		}
+
+		interface AddEmitPayloadSchema extends SpruceSchema.Schema {
+			id: 'addEmitPayload',
+			version: 'v2022_10_08',
+			namespace: 'Todos',
+			name: '',
+			    fields: {
+			            /** Update me. */
+			            'todo': {
+			                label: 'Update me',
+			                type: 'text',
+			                options: undefined
+			            },
+			    }
+		}
+
+		interface AddEmitPayloadEntity extends SchemaEntity<SpruceSchemas.Todos.v2022_10_08.AddEmitPayloadSchema> {}
+
+	}
+
+
+	namespace SpruceSchemas.Todos.v2022_10_08 {
+
+		
+		interface AddEmitTargetAndPayload {
+			
+				/** Source. */
+				'source'?: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSource| undefined | null
+				
+				'target'?: SpruceSchemas.Todos.v2022_10_08.AddEmitTarget| undefined | null
+				
+				'payload'?: SpruceSchemas.Todos.v2022_10_08.AddEmitPayload| undefined | null
+		}
+
+		interface AddEmitTargetAndPayloadSchema extends SpruceSchema.Schema {
+			id: 'addEmitTargetAndPayload',
+			version: 'v2022_10_08',
+			namespace: 'Todos',
+			name: '',
+			    fields: {
+			            /** Source. */
+			            'source': {
+			                label: 'Source',
+			                type: 'schema',
+			                options: {schema: SpruceSchemas.SpruceEventUtils.v2021_09_13.EventSourceSchema,}
+			            },
+			            /** . */
+			            'target': {
+			                type: 'schema',
+			                options: {schema: SpruceSchemas.Todos.v2022_10_08.AddEmitTargetSchema,}
+			            },
+			            /** . */
+			            'payload': {
+			                type: 'schema',
+			                options: {schema: SpruceSchemas.Todos.v2022_10_08.AddEmitPayloadSchema,}
+			            },
+			    }
+		}
+
+		interface AddEmitTargetAndPayloadEntity extends SchemaEntity<SpruceSchemas.Todos.v2022_10_08.AddEmitTargetAndPayloadSchema> {}
+
+	}
+
+
+	namespace SpruceSchemas.Todos.v2022_10_08 {
+
+		
+		interface AddResponsePayload {
+			
+				/** Update me. */
+				'aTextField'?: string| undefined | null
+		}
+
+		interface AddResponsePayloadSchema extends SpruceSchema.Schema {
+			id: 'addResponsePayload',
+			version: 'v2022_10_08',
+			namespace: 'Todos',
+			name: '',
+			    fields: {
+			            /** Update me. */
+			            'aTextField': {
+			                label: 'Update me',
+			                type: 'text',
+			                options: undefined
+			            },
+			    }
+		}
+
+		interface AddResponsePayloadEntity extends SchemaEntity<SpruceSchemas.Todos.v2022_10_08.AddResponsePayloadSchema> {}
+
+	}
+
+
+	namespace SpruceSchemas.Todos.v2022_10_08 {
+
+		
+		interface Todo {
+			
+				/** First Field. */
+				'fieldName1': string
+				/** Second Field. A hint */
+				'fieldName2': number
+		}
+
+		interface TodoSchema extends SpruceSchema.Schema {
+			id: 'todo',
+			version: 'v2022_10_08',
+			namespace: 'Todos',
+			name: 'Todo',
+			    fields: {
+			            /** First Field. */
+			            'fieldName1': {
+			                label: 'First Field',
+			                type: 'text',
+			                isRequired: true,
+			                options: undefined
+			            },
+			            /** Second Field. A hint */
+			            'fieldName2': {
+			                label: 'Second Field',
+			                type: 'number',
+			                isRequired: true,
+			                hint: 'A hint',
+			                options: undefined
+			            },
+			    }
+		}
+
+		interface TodoEntity extends SchemaEntity<SpruceSchemas.Todos.v2022_10_08.TodoSchema> {}
 
 	}
 

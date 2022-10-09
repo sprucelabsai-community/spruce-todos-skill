@@ -23,8 +23,12 @@ import heartwoodRegisterSkillViewsEventContract_v2021_02_11, {
 import heartwoodUpsertThemeEventContract_v2021_02_11, {
 	UpsertThemeEventContract as HeartwoodUpsertThemeEventContract_v2021_02_11,
 } from '#spruce/events/heartwood/upsertTheme.v2021_02_11.contract'
+import todosAddEventContract_v2022_10_08, {
+	AddEventContract as TodosAddEventContract_v2022_10_08,
+} from '#spruce/events/todos/add.v2022_10_08.contract'
 
 export default [
+	todosAddEventContract_v2022_10_08,
 	heartwoodDidRegisterSkillViewsEventContract_v2021_02_11,
 	heartwoodGenerateUrlEventContract_v2021_02_11,
 	heartwoodGetActiveThemeEventContract_v2021_02_11,
@@ -38,6 +42,8 @@ export default [
 
 declare module '@sprucelabs/mercury-types/build/types/mercury.types' {
 	interface SkillEventSignatures {
+		'todos.add::v2022_10_08': TodosAddEventContract_v2022_10_08['eventSignatures']['todos.add::v2022_10_08']
+
 		'heartwood.did-register-skill-views::v2021_02_11': HeartwoodDidRegisterSkillViewsEventContract_v2021_02_11['eventSignatures']['heartwood.did-register-skill-views::v2021_02_11']
 
 		'heartwood.generate-url::v2021_02_11': HeartwoodGenerateUrlEventContract_v2021_02_11['eventSignatures']['heartwood.generate-url::v2021_02_11']

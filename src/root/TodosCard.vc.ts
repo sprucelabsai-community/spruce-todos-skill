@@ -51,11 +51,11 @@ export default class TodosCardViewController extends AbstractViewController<Card
 		const { key } = options
 
 		if (key === 'Enter') {
-			this.optionallyAddNewTodo()
+			await this.optionallyAddNewTodo()
 		}
 	}
 
-	private optionallyAddNewTodo() {
+	private async optionallyAddNewTodo() {
 		const { todo } = this.newRowVc.getValues()
 
 		if (todo) {
@@ -84,6 +84,11 @@ export default class TodosCardViewController extends AbstractViewController<Card
 		}
 
 		this.newRowVc.setValue('todo', '')
+
+		const client = await this.connectToApi()
+		await client.emitAndFlattenResponses('todos.add::v2022_10_08', {
+			payload: {},
+		})
 	}
 
 	private get newRowVc() {

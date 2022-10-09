@@ -3,7 +3,7 @@ import {
 	KeyboardKey,
 	listAssert,
 } from '@sprucelabs/heartwood-view-controllers'
-import { fake } from '@sprucelabs/spruce-test-fixtures'
+import { eventFaker, fake } from '@sprucelabs/spruce-test-fixtures'
 import { AbstractSpruceFixtureTest } from '@sprucelabs/spruce-test-fixtures'
 import { test, assert, generateId } from '@sprucelabs/test-utils'
 import SpyTodosCardViewController from '../../support/SpyTodosCardViewController'
@@ -23,6 +23,8 @@ export default class TodosCardTest extends AbstractSpruceFixtureTest {
 			'todos.todos-card',
 			{}
 		) as SpyTodosCardViewController
+
+		await eventFaker.on('todos.add::v2022_10_08', () => {})
 	}
 
 	@test()
@@ -77,6 +79,18 @@ export default class TodosCardTest extends AbstractSpruceFixtureTest {
 	protected static async todoRowHasDeleteButton() {
 		await this.addRandomTodo()
 		listAssert.rowRendersButton(this.listVc, 1, 'delete')
+	}
+
+	@test()
+	protected static async addingTodoEmitsAddEvent() {
+		let wasHit = false
+		await eventFaker.on('todos.add::v2022_10_08', () => {
+			wasHit = true
+		})
+
+		await this.addRandomTodo()
+
+		assert.isTrue(wasHit)
 	}
 
 	private static async addRandomTodo() {
