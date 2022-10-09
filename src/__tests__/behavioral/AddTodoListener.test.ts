@@ -13,6 +13,8 @@ export default class AddTodoListenerTest extends AbstractSpruceFixtureTest {
 	protected static async emittingAddsRecordToDataStore() {
 		await this.emitAdd()
 		const todos = await this.stores.getStore('todos')
+		const count = await todos.count()
+		assert.isEqual(count, 1)
 	}
 
 	private static async emitAdd() {

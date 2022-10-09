@@ -9,6 +9,15 @@ import { SpruceSchemas } from '#spruce/schemas/schemas.types'
 export default async (
 	event: SpruceEvent<SkillEventContract, EmitPayload>
 ): SpruceEventResponse<ResponsePayload> => {
+	const { stores } = event
+	const todos = await stores.getStore('todos')
+	await todos.createOne({
+		target: {
+			personId: generateId(),
+		},
+		todo: generateId(),
+	})
+
 	return {
 		todo: {
 			id: generateId(),

@@ -11,17 +11,10 @@ import {
 	SchemaValues,
 	SchemaFieldNames,
 } from '@sprucelabs/schema'
+import todoSchema from '#spruce/schemas/todos/v2022_10_08/todo.schema'
 
 // The structure of the data you'll be returning from finds
-const fullSchema = buildSchema({
-	id: 'fullTodo',
-	fields: {
-		id: {
-			type: 'id',
-			isRequired: true,
-		},
-	},
-})
+const fullSchema = todoSchema
 
 // The values you will accept when creating a record
 const createSchema = buildSchema({
