@@ -110,6 +110,7 @@
             "todoRowHasDeleteButton": "B7",
             "addedTodoRowHasCheckbox": "B8",
             "pressingEnterDoesNotAddRowIfNoTodo": "B16",
+            "addListenerReturnsSavedRecord": "E2",
             "addingTodoEmitsAddEvent": "E3"
           }
         }

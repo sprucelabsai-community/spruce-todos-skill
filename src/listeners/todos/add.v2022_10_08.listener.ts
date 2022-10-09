@@ -3,29 +3,25 @@ import {
 	SpruceEvent,
 	SpruceEventResponse,
 } from '@sprucelabs/spruce-event-utils'
-import { generateId } from '@sprucelabs/test-utils'
 import { SpruceSchemas } from '#spruce/schemas/schemas.types'
 
 export default async (
 	event: SpruceEvent<SkillEventContract, EmitPayload>
 ): SpruceEventResponse<ResponsePayload> => {
-	const { stores } = event
+	const { stores, payload, source } = event
+	const { todo } = payload
+	const { personId } = source
+
 	const todos = await stores.getStore('todos')
-	await todos.createOne({
+	const created = await todos.createOne({
 		target: {
-			personId: generateId(),
+			personId: personId!,
 		},
-		todo: generateId(),
+		todo,
 	})
 
 	return {
-		todo: {
-			id: generateId(),
-			target: {
-				personId: generateId(),
-			},
-			todo: generateId(),
-		},
+		todo: created,
 	}
 }
 
