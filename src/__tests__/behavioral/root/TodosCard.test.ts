@@ -1,4 +1,8 @@
-import { interactor, KeyboardKey } from '@sprucelabs/heartwood-view-controllers'
+import {
+	interactor,
+	KeyboardKey,
+	listAssert,
+} from '@sprucelabs/heartwood-view-controllers'
 import { fake } from '@sprucelabs/spruce-test-fixtures'
 import { AbstractSpruceFixtureTest } from '@sprucelabs/spruce-test-fixtures'
 import { test, assert, generateId } from '@sprucelabs/test-utils'
@@ -27,6 +31,7 @@ export default class TodosCardTest extends AbstractSpruceFixtureTest {
 		await this.setTodoInputToRandomValue()
 		await this.pressKeyOnNewTodoInput('Enter')
 		this.assertTotalRows(2)
+		assert.isFalsy(this.newRowVc.getValue('todo'))
 	}
 
 	@test()
@@ -56,12 +61,38 @@ export default class TodosCardTest extends AbstractSpruceFixtureTest {
 		this.assertTotalRows(1)
 	}
 
+	@test()
+	protected static async newTodoRowRendersTodoInputContent() {
+		const todo = await this.addRandomTodo()
+		listAssert.rowRendersContent(this.listVc, 1, todo)
+	}
+
+	@test()
+	protected static async addedTodoRowHasCheckbox() {
+		await this.addRandomTodo()
+		listAssert.rowRendersCheckBox(this.listVc, 1)
+	}
+
+	@test()
+	protected static async todoRowHasDeleteButton() {
+		await this.addRandomTodo()
+		listAssert.rowRendersButton(this.listVc, 1, 'delete')
+	}
+
+	private static async addRandomTodo() {
+		const todo = await this.setTodoInputToRandomValue()
+		await this.clickAddButton()
+		return todo
+	}
+
 	private static async clickAddButton() {
 		await interactor.clickButtonInRow(this.listVc, 'new', 'add')
 	}
 
 	private static async setTodoInputToRandomValue() {
-		await this.newRowVc.setValue('todo', generateId())
+		const value = generateId()
+		await this.newRowVc.setValue('todo', value)
+		return value
 	}
 
 	private static async pressKeyOnNewTodoInput(key: KeyboardKey) {

@@ -20,10 +20,11 @@ export default class TodosCardViewController extends AbstractViewController<Card
 
 	private ListVc(): ListViewController {
 		return this.Controller('list', {
-			columnWidths: ['fill'],
+			columnWidths: ['content', 'fill'],
 			rows: [
 				{
 					id: 'new',
+					columnWidths: ['fill', 'content'],
 					cells: [
 						{
 							textInput: {
@@ -55,15 +56,38 @@ export default class TodosCardViewController extends AbstractViewController<Card
 	}
 
 	private optionallyAddNewTodo() {
-		const rowVc = this.listVc.getRowVc('new')
-		const { todo } = rowVc.getValues()
+		const { todo } = this.newRowVc.getValues()
 
 		if (todo) {
 			this.listVc.addRow({
 				id: 'test',
-				cells: [],
+				cells: [
+					{
+						checkboxInput: {
+							name: 'aoeu',
+						},
+					},
+					{
+						text: {
+							content: todo,
+						},
+					},
+					{
+						button: {
+							id: 'delete',
+							lineIcon: 'delete',
+							type: 'destructive',
+						},
+					},
+				],
 			})
 		}
+
+		this.newRowVc.setValue('todo', '')
+	}
+
+	private get newRowVc() {
+		return this.listVc.getRowVc('new')
 	}
 
 	private CardVc(): CardViewController {

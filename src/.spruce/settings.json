@@ -16,6 +16,9 @@
     }
   ],
   "events": {
-    "lastSync": {}
+    "lastSync": {},
+    "listenerCacheKeys": {
+      "httpsdevelopermercuryspruceai": ""
+    }
   }
 }
