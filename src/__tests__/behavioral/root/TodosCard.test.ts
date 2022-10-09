@@ -55,7 +55,7 @@ export default class TodosCardTest extends AbstractSpruceFixtureTest {
 
 	@test()
 	protected static async pressingAddButtonWithTodoAddsRow() {
-		this.setTodoInputToRandomValue()
+		await this.setTodoInputToRandomValue()
 		await this.clickAddButton()
 		this.assertTotalRows(2)
 	}
