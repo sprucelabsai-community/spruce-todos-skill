@@ -24,7 +24,17 @@ export default class TodosCardTest extends AbstractSpruceFixtureTest {
 			{}
 		) as SpyTodosCardViewController
 
-		await eventFaker.on('todos.add::v2022_10_08', () => {})
+		await eventFaker.on('todos.add::v2022_10_08', () => {
+			return {
+				todo: {
+					id: generateId(),
+					todo: generateId(),
+					target: {
+						personId: generateId(),
+					},
+				},
+			}
+		})
 	}
 
 	@test()

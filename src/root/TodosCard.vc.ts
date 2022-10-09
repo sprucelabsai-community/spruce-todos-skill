@@ -87,7 +87,9 @@ export default class TodosCardViewController extends AbstractViewController<Card
 
 		const client = await this.connectToApi()
 		await client.emitAndFlattenResponses('todos.add::v2022_10_08', {
-			payload: {},
+			payload: {
+				todo: 'hello world!',
+			},
 		})
 	}
 
