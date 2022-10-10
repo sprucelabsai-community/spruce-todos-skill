@@ -90,7 +90,7 @@ export default class TodosCardViewController extends AbstractViewController<Card
 			})
 		}
 
-		this.newRowVc.setValue('todo', '')
+		await this.newRowVc.setValue('todo', '')
 	}
 
 	private get newRowVc() {
