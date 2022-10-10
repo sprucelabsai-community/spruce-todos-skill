@@ -1,10 +1,10 @@
 import { fake } from '@sprucelabs/spruce-test-fixtures'
-import { AbstractSpruceFixtureTest } from '@sprucelabs/spruce-test-fixtures'
 import { test, assert, generateId } from '@sprucelabs/test-utils'
 import TodosStore from '../../../stores/Todos.store'
+import AbstractTodosTest from '../../support/AbstractTodosTest'
 
 @fake.login()
-export default class AddTodoListenerTest extends AbstractSpruceFixtureTest {
+export default class AddTodoListenerTest extends AbstractTodosTest {
 	private static todos: TodosStore
 	private static todo: string
 

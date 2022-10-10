@@ -1,17 +1,17 @@
 import { listAssert, vcAssert } from '@sprucelabs/heartwood-view-controllers'
-import { AbstractSpruceFixtureTest } from '@sprucelabs/spruce-test-fixtures'
 import { test } from '@sprucelabs/test-utils'
 import RootSkillViewController from '../../../root/Root.svc'
+import AbstractTodosTest from '../../support/AbstractTodosTest'
 import SpyTodosCardViewController from '../../support/SpyTodosCardViewController'
 
-export default class RootViewControllerTest extends AbstractSpruceFixtureTest {
+export default class RootViewControllerTest extends AbstractTodosTest {
 	private static vc: SpyRootViewController
 
 	protected static async beforeEach() {
 		await super.beforeEach()
 
 		this.views.setController('todos.root', SpyRootViewController)
-		this.views.setController('todos.todos-card', SpyTodosCardViewController)
+		this.dropInSpyTodosCard()
 		this.vc = this.views.Controller('todos.root', {}) as SpyRootViewController
 	}
 

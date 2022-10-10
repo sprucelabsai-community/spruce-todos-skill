@@ -4,13 +4,13 @@ import {
 	listAssert,
 } from '@sprucelabs/heartwood-view-controllers'
 import { fake } from '@sprucelabs/spruce-test-fixtures'
-import { AbstractSpruceFixtureTest } from '@sprucelabs/spruce-test-fixtures'
 import { test, assert, generateId } from '@sprucelabs/test-utils'
+import AbstractTodosTest from '../../support/AbstractTodosTest'
 import EventFaker, { AddTodoTargetAndPayload } from '../../support/EventFaker'
 import SpyTodosCardViewController from '../../support/SpyTodosCardViewController'
 
 @fake.login()
-export default class TodosCardTest extends AbstractSpruceFixtureTest {
+export default class TodosCardTest extends AbstractTodosTest {
 	protected static vc: SpyTodosCardViewController
 	private static eventFaker: EventFaker
 
@@ -21,7 +21,7 @@ export default class TodosCardTest extends AbstractSpruceFixtureTest {
 	protected static async beforeEach() {
 		await super.beforeEach()
 		this.eventFaker = new EventFaker()
-		this.views.setController('todos.todos-card', SpyTodosCardViewController)
+		this.dropInSpyTodosCard()
 		this.vc = this.views.Controller(
 			'todos.todos-card',
 			{}
