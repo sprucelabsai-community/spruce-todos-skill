@@ -8,7 +8,8 @@
     "schema",
     "event",
     "view",
-    "store"
+    "store",
+    "sandbox"
   ],
   "dependencies": [
     {
