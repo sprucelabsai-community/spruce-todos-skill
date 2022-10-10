@@ -17,6 +17,9 @@
     }
   ],
   "events": {
-    "lastSync": {}
+    "lastSync": {},
+    "listenerCacheKeys": {
+      "httpsdevelopermercuryspruceai": "addtodosv2022_10_08"
+    }
   }
 }

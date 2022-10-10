@@ -4,6 +4,7 @@ import {
 	SpruceEventResponse,
 } from '@sprucelabs/spruce-event-utils'
 import { SpruceSchemas } from '#spruce/schemas/schemas.types'
+import TodoAdder from '../../TodoAdder'
 
 export default async (
 	event: SpruceEvent<SkillEventContract, EmitPayload>
@@ -12,13 +13,8 @@ export default async (
 	const { todo } = payload
 	const { personId } = source
 
-	const todos = await stores.getStore('todos')
-	const created = await todos.createOne({
-		target: {
-			personId: personId!,
-		},
-		todo,
-	})
+	const adder = await TodoAdder.Adder(stores)
+	const created = await adder.createTodo(todo, personId!)
 
 	return {
 		todo: created,
