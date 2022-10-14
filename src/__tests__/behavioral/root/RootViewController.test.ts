@@ -17,6 +17,11 @@ export default class RootViewControllerTest extends AbstractTodosTest {
 	}
 
 	@test()
+	protected static async requiresLogin() {
+		vcAssert.assertLoginIsRequired(this.vc)
+	}
+
+	@test()
 	protected static rendersCard() {
 		vcAssert.assertSkillViewRendersCard(this.vc)
 	}
