@@ -14,6 +14,10 @@ export default class RootSkillViewController extends AbstractSkillViewController
 		this.cardVc = this.CardVc()
 	}
 
+	public async getIsLoginRequired() {
+		return true
+	}
+
 	private CardVc() {
 		return this.Controller('todos.todos-card', {})
 	}
