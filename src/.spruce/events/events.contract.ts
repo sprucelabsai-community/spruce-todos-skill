@@ -26,6 +26,9 @@ import heartwoodUpsertThemeEventContract_v2021_02_11, {
 import todosAddEventContract_v2022_10_08, {
 	AddEventContract as TodosAddEventContract_v2022_10_08,
 } from '#spruce/events/todos/add.v2022_10_08.contract'
+import todosListEventContract_v2022_10_08, {
+	ListEventContract as TodosListEventContract_v2022_10_08,
+} from '#spruce/events/todos/list.v2022_10_08.contract'
 
 export default [
 	todosAddEventContract_v2022_10_08,
@@ -33,6 +36,7 @@ export default [
 	heartwoodGenerateUrlEventContract_v2021_02_11,
 	heartwoodGetActiveThemeEventContract_v2021_02_11,
 	heartwoodGetSkillViewsEventContract_v2021_02_11,
+	todosListEventContract_v2022_10_08,
 	heartwoodListViewsEventContract_v2021_02_11,
 	heartwoodRegisterDashboardCardsEventContract_v2021_02_11,
 	heartwoodRegisterSkillViewsEventContract_v2021_02_11,
@@ -51,6 +55,8 @@ declare module '@sprucelabs/mercury-types/build/types/mercury.types' {
 		'heartwood.get-active-theme::v2021_02_11': HeartwoodGetActiveThemeEventContract_v2021_02_11['eventSignatures']['heartwood.get-active-theme::v2021_02_11']
 
 		'heartwood.get-skill-views::v2021_02_11': HeartwoodGetSkillViewsEventContract_v2021_02_11['eventSignatures']['heartwood.get-skill-views::v2021_02_11']
+
+		'todos.list::v2022_10_08': TodosListEventContract_v2022_10_08['eventSignatures']['todos.list::v2022_10_08']
 
 		'heartwood.list-views::v2021_02_11': HeartwoodListViewsEventContract_v2021_02_11['eventSignatures']['heartwood.list-views::v2021_02_11']
 

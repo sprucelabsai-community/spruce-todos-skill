@@ -1,7 +1,8 @@
 import { listAssert, vcAssert } from '@sprucelabs/heartwood-view-controllers'
-import { test } from '@sprucelabs/test-utils'
+import { assert, test } from '@sprucelabs/test-utils'
 import RootSkillViewController from '../../../root/Root.svc'
 import AbstractTodosTest from '../../support/AbstractTodosTest'
+import generateTodoValues from '../../support/generateTodoValues'
 import SpyTodosCardViewController from '../../support/SpyTodosCardViewController'
 
 export default class RootViewControllerTest extends AbstractTodosTest {
@@ -38,6 +39,34 @@ export default class RootViewControllerTest extends AbstractTodosTest {
 	@test()
 	protected static newRowRendersAddButton() {
 		listAssert.rowRendersButton(this.listVc, 'new', 'add')
+	}
+
+	@test()
+	protected static async loadingViewEmitsListTodos() {
+		let wasHit = false
+		await this.eventFaker.fakeListTodos(() => {
+			wasHit = true
+		})
+
+		await this.load()
+		assert.isTrue(wasHit)
+	}
+
+	@test()
+	protected static async todosAreDroppedIntoList() {
+		const todo = generateTodoValues()
+		await this.eventFaker.fakeListTodos(() => {
+			return {
+				todos: [todo],
+			}
+		})
+
+		await this.load()
+		listAssert.listRendersRow(this.listVc, todo.id)
+	}
+
+	private static async load() {
+		await this.views.load(this.vc)
 	}
 
 	private static get listVc() {

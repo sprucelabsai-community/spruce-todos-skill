@@ -97,6 +97,26 @@ export default class TodosCardViewController extends AbstractViewController<Card
 		return this.listVc.getRowVc('new')
 	}
 
+	public async load() {
+		const client = await this.connectToApi()
+		const [{ todos }] = await client.emitAndFlattenResponses(
+			'todos.list::v2022_10_08'
+		)
+
+		for (const todo of todos) {
+			this.listVc.addRow({
+				id: todo.id,
+				cells: [
+					{
+						text: {
+							content: todo.todo,
+						},
+					},
+				],
+			})
+		}
+	}
+
 	private CardVc(): CardViewController {
 		return this.Controller('card', {
 			body: {

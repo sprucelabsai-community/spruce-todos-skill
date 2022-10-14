@@ -18,6 +18,10 @@ export default class RootSkillViewController extends AbstractSkillViewController
 		return this.Controller('todos.todos-card', {})
 	}
 
+	public async load() {
+		await this.cardVc.load()
+	}
+
 	public render(): SkillView {
 		return {
 			layouts: [

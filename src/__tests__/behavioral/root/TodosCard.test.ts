@@ -6,21 +6,16 @@ import {
 import { fake } from '@sprucelabs/spruce-test-fixtures'
 import { test, assert, generateId } from '@sprucelabs/test-utils'
 import AbstractTodosTest from '../../support/AbstractTodosTest'
-import EventFaker, { AddTodoTargetAndPayload } from '../../support/EventFaker'
+import { AddTodoTargetAndPayload } from '../../support/EventFaker'
+import generateTodoValues from '../../support/generateTodoValues'
 import SpyTodosCardViewController from '../../support/SpyTodosCardViewController'
 
 @fake.login()
 export default class TodosCardTest extends AbstractTodosTest {
 	protected static vc: SpyTodosCardViewController
-	private static eventFaker: EventFaker
-
-	private static get newRowVc() {
-		return this.listVc.getRowVc('new')
-	}
 
 	protected static async beforeEach() {
 		await super.beforeEach()
-		this.eventFaker = new EventFaker()
 		this.dropInSpyTodosCard()
 		this.vc = this.views.Controller(
 			'todos.todos-card',
@@ -97,6 +92,23 @@ export default class TodosCardTest extends AbstractTodosTest {
 		assert.isEqual(passedPayload?.todo, todo)
 	}
 
+	@test()
+	protected static async loadsAllTodosOnLoad() {
+		const todos = [generateTodoValues(), generateTodoValues()]
+		await this.eventFaker.fakeListTodos(() => {
+			return {
+				todos,
+			}
+		})
+
+		await this.load()
+		todos.forEach((t) => listAssert.listRendersRow(this.listVc, t.id))
+	}
+
+	private static async load() {
+		await this.vc.load()
+	}
+
 	private static async addRandomTodo() {
 		const todo = await this.setTodoInputToRandomValue()
 		await this.clickAddButton()
@@ -128,6 +140,10 @@ export default class TodosCardTest extends AbstractTodosTest {
 			expected,
 			`Didn't get expected total rows!\n\nExpected: ${expected}\nActual: ${actual}`
 		)
+	}
+
+	private static get newRowVc() {
+		return this.listVc.getRowVc('new')
 	}
 
 	private static get listVc() {

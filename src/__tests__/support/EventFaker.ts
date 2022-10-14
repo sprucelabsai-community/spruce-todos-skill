@@ -18,7 +18,20 @@ export default class EventFaker {
 			}
 		})
 	}
+
+	public async fakeListTodos(cb?: () => ListTodosResponse | void) {
+		await eventFaker.on('todos.list::v2022_10_08', () => {
+			return (
+				cb?.() ?? {
+					todos: [],
+				}
+			)
+		})
+	}
 }
 
 export type AddTodoTargetAndPayload =
 	SpruceSchemas.Todos.v2022_10_08.AddEmitTargetAndPayload
+
+export type ListTodosResponse =
+	SpruceSchemas.Todos.v2022_10_08.ListResponsePayload
