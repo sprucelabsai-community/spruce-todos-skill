@@ -2,6 +2,13 @@ import { EventFeatureListener } from '@sprucelabs/spruce-event-utils'
 
 const listeners: EventFeatureListener[] = [
 	{
+		eventName: 'list',
+		eventNamespace: 'todos',
+		version: 'v2022_10_08',
+		callback: require('../../listeners/todos/list.v2022_10_08.listener')
+			.default,
+	},
+	{
 		eventName: 'did-boot',
 		eventNamespace: 'skill',
 		version: 'v2022_10_09',

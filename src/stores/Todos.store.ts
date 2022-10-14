@@ -11,6 +11,8 @@ import {
 	SchemaValues,
 	SchemaFieldNames,
 } from '@sprucelabs/schema'
+import { StoreSeedOptions } from '@sprucelabs/spruce-test-fixtures'
+import { generateId } from '@sprucelabs/test-utils'
 import todoSchema from '#spruce/schemas/todos/v2022_10_08/todo.schema'
 
 // The structure of the data you'll be returning from finds
@@ -93,5 +95,19 @@ export default class TodosStore extends AbstractStore<
 		_options?: PrepareOptions<IncludePrivateFields, FullSchema, F>
 	) {
 		return record as PrepareResults<FullSchema, IncludePrivateFields>
+	}
+
+	public async seed(options: StoreSeedOptions) {
+		const { totalToSeed, TestClass } = options
+		await Promise.all(
+			new Array(totalToSeed).fill(0).map(() => {
+				this.createOne({
+					target: {
+						personId: TestClass.fakedPerson.id,
+					},
+					todo: generateId(),
+				})
+			})
+		)
 	}
 }
