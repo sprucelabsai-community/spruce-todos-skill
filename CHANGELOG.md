@@ -1,3 +1,11 @@
+# [2.0.0](https://github.com/sprucelabsai/spruce-todos-skill/compare/v1.1.5...v2.0.0) (2022-10-14)
+
+
+### Breaking Changes
+
+* login now required ([a0e170a](https://github.com/sprucelabsai/spruce-todos-skill/commit/a0e170a))
+* login now required ([91529c8](https://github.com/sprucelabsai/spruce-todos-skill/commit/91529c8))
+
 ## [1.1.5](https://github.com/sprucelabsai/spruce-todos-skill/compare/v1.1.4...v1.1.5) (2022-10-14)
 
 ## [1.1.4](https://github.com/sprucelabsai/spruce-todos-skill/compare/v1.1.3...v1.1.4) (2022-10-13)
