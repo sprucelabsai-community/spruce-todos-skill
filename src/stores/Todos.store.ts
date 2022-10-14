@@ -101,7 +101,7 @@ export default class TodosStore extends AbstractStore<
 		const { totalToSeed, TestClass } = options
 		await Promise.all(
 			new Array(totalToSeed).fill(0).map(() => {
-				this.createOne({
+				return this.createOne({
 					target: {
 						personId: TestClass.fakedPerson.id,
 					},
