@@ -54,7 +54,7 @@
     "@sprucelabs/spruce-skill-booter": "^50.1.1",
     "@sprucelabs/spruce-skill-utils": "^28.0.7",
     "@sprucelabs/spruce-store-plugin": "^50.1.1",
-    "@sprucelabs/spruce-view-plugin": "^38.0.14",
+    "@sprucelabs/spruce-view-plugin": "^38.0.15",
     "dotenv": "^16.0.3",
     "globby": "^11.0.4"
   },
