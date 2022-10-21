@@ -2,6 +2,8 @@ import {
 	interactor,
 	KeyboardKey,
 	listAssert,
+	ListRow,
+	vcAssert,
 } from '@sprucelabs/heartwood-view-controllers'
 import { fake } from '@sprucelabs/spruce-test-fixtures'
 import { test, assert, generateId } from '@sprucelabs/test-utils'
@@ -23,6 +25,7 @@ export default class TodosCardTest extends AbstractTodosTest {
 		) as SpyTodosCardViewController
 
 		await this.eventFaker.fakeAddTodo()
+		await this.eventFaker.fakeListTodos()
 	}
 
 	@test()
@@ -103,6 +106,35 @@ export default class TodosCardTest extends AbstractTodosTest {
 
 		await this.load()
 		todos.forEach((t) => listAssert.listRendersRow(this.listVc, t.id))
+	}
+
+	@test()
+	protected static async isBusyUntilLoaded() {
+		vcAssert.assertCardIsBusy(this.vc)
+		await this.load()
+		vcAssert.assertCardIsNotBusy(this.vc)
+	}
+
+	@test()
+	protected static async newRowOnLoad() {
+		const expected = this.renderNewRowAndRemoveReferences()
+		await this.load()
+		const actual = this.renderNewRowAndRemoveReferences()
+
+		assert.isEqualDeep(actual, expected)
+	}
+
+	private static renderNewRowAndRemoveReferences() {
+		const expected = this.views.render(this.newRowVc)
+		this.cleanRenderNewRow(expected)
+		return expected
+	}
+
+	private static cleanRenderNewRow(actual: ListRow) {
+		delete actual.controller
+		delete actual.cells[0].controller
+		delete actual.cells[0].textInput?.setValue
+		delete actual.cells[1].controller
 	}
 
 	private static async load() {

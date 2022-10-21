@@ -3,6 +3,7 @@ import {
 	Card,
 	CardViewController,
 	CellInputKeyDownOptions,
+	ListRow,
 	ListViewController,
 	ViewControllerOptions,
 } from '@sprucelabs/heartwood-view-controllers'
@@ -103,8 +104,10 @@ export default class TodosCardViewController extends AbstractViewController<Card
 			'todos.list::v2022_10_08'
 		)
 
+		const rows: ListRow[] = [this.listVc.getRowVc('new').render()]
+
 		for (const todo of todos) {
-			this.listVc.addRow({
+			const row = {
 				id: todo.id,
 				cells: [
 					{
@@ -113,13 +116,18 @@ export default class TodosCardViewController extends AbstractViewController<Card
 						},
 					},
 				],
-			})
+			}
+			rows.push(row)
 		}
+
+		this.listVc.setRows(rows)
+		this.cardVc.setIsBusy(false)
 	}
 
 	private CardVc(): CardViewController {
 		return this.Controller('card', {
 			body: {
+				isBusy: true,
 				sections: [
 					{
 						list: this.listVc.render(),
