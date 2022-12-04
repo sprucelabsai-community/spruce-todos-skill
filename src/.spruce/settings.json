@@ -9,7 +9,8 @@
     "event",
     "view",
     "store",
-    "sandbox"
+    "sandbox",
+    "permission"
   ],
   "dependencies": [
     {
