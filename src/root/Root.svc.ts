@@ -12,6 +12,10 @@ export default class RootSkillViewController extends AbstractSkillViewController
 	public constructor(options: ViewControllerOptions) {
 		super(options)
 		this.cardVc = this.CardVc()
+		this.setTitle('Todos (WIP')
+		this.setSubtitle(
+			'This todo app is a work in progress. It is worked on as part of the developer onboarding!'
+		)
 	}
 
 	public async getIsLoginRequired() {
