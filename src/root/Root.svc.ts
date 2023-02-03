@@ -14,7 +14,7 @@ export default class RootSkillViewController extends AbstractSkillViewController
 		this.cardVc = this.CardVc()
 		this.setTitle('Todos (WIP')
 		this.setSubtitle(
-			'This todo app is a work in progress. It is worked on as part of the developer onboarding!'
+			'This skill is a work in progress. It is worked on as part of the developer onboarding!'
 		)
 	}
 
