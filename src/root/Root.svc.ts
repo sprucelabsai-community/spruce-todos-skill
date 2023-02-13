@@ -12,7 +12,7 @@ export default class RootSkillViewController extends AbstractSkillViewController
 	public constructor(options: ViewControllerOptions) {
 		super(options)
 		this.cardVc = this.CardVc()
-		this.setTitle('Todos (WIP')
+		this.setTitle('Todos (WIP)')
 		this.setSubtitle(
 			'This skill is a work in progress. It is worked on as part of the developer onboarding!'
 		)
