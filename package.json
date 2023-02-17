@@ -55,7 +55,7 @@
     "@sprucelabs/spruce-skill-booter": "^52.8.0",
     "@sprucelabs/spruce-skill-utils": "^28.1.78",
     "@sprucelabs/spruce-store-plugin": "^52.8.0",
-    "@sprucelabs/spruce-view-plugin": "^40.1.257",
+    "@sprucelabs/spruce-view-plugin": "^40.1.258",
     "dotenv": "^16.0.3",
     "globby": "^11.0.4"
   },
@@ -67,7 +67,7 @@
     "@sprucelabs/spruce-test-fixtures": "^52.8.0",
     "@sprucelabs/test": "^7.7.420",
     "@sprucelabs/test-utils": "^3.3.9",
-    "@types/node": "^18.13.0",
+    "@types/node": "^18.14.0",
     "chokidar-cli": "^3.0.0",
     "concurrently": "^7.6.0",
     "eslint": "^8.34.0",
