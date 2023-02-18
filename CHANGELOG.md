@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/sprucelabsai/spruce-todos-skill/compare/v2.1.4...v2.2.0) (2023-02-18)
+
+
+### Features
+
+* upgrade ([270c7f9](https://github.com/sprucelabsai/spruce-todos-skill/commit/270c7f9))
+
 ## [2.1.4](https://github.com/sprucelabsai/spruce-todos-skill/compare/v2.1.3...v2.1.4) (2023-02-16)
 
 ## [2.1.3](https://github.com/sprucelabsai/spruce-todos-skill/compare/v2.1.2...v2.1.3) (2023-02-15)
