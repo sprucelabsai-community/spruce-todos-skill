@@ -1,7 +1,7 @@
 {
   "name": "todos",
   "description": "Getting things done",
-  "version": "3.0.9",
+  "version": "3.0.10",
   "skill": {
     "namespace": "todos"
   },
