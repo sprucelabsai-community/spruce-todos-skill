@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/sprucelabsai/spruce-todos-skill/compare/v3.0.11...v3.1.0) (2023-03-05)
+
+
+### Features
+
+* upgrade ([d1956b2](https://github.com/sprucelabsai/spruce-todos-skill/commit/d1956b2))
+
 ## [3.0.11](https://github.com/sprucelabsai/spruce-todos-skill/compare/v3.0.10...v3.0.11) (2023-03-03)
 
 ## [3.0.10](https://github.com/sprucelabsai/spruce-todos-skill/compare/v3.0.9...v3.0.10) (2023-03-03)
