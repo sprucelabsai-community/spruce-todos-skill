@@ -1,3 +1,5 @@
+## [3.1.33](https://github.com/sprucelabsai-community/spruce-todos-skill/compare/v3.1.32...v3.1.33) (2023-04-24)
+
 ## [3.1.32](https://github.com/sprucelabsai-community/spruce-todos-skill/compare/v3.1.31...v3.1.32) (2023-04-22)
 
 ## [3.1.31](https://github.com/sprucelabsai-community/spruce-todos-skill/compare/v3.1.30...v3.1.31) (2023-04-20)
