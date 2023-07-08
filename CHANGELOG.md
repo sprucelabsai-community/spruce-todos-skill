@@ -1,3 +1,10 @@
+# [5.0.0](https://github.com/sprucelabsai-community/spruce-todos-skill/compare/v4.0.6...v5.0.0) (2023-07-08)
+
+
+### Breaking Changes
+
+* upgrade ([3d2e331](https://github.com/sprucelabsai-community/spruce-todos-skill/commit/3d2e331))
+
 ## [4.0.6](https://github.com/sprucelabsai-community/spruce-todos-skill/compare/v4.0.5...v4.0.6) (2023-06-21)
 
 ## [4.0.5](https://github.com/sprucelabsai-community/spruce-todos-skill/compare/v4.0.4...v4.0.5) (2023-06-20)
