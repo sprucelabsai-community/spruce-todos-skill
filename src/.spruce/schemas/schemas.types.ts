@@ -565,7 +565,9 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 				
 				'ids': string[]
 				
-				'source': string
+				'source'?: string| undefined | null
+				
+				'sourceUrl'?: string| undefined | null
 				
 				'theme'?: SpruceSchemas.HeartwoodViewControllers.v2021_02_11.Theme| undefined | null
 		}
@@ -592,7 +594,11 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			            /** . */
 			            'source': {
 			                type: 'text',
-			                isRequired: true,
+			                options: undefined
+			            },
+			            /** . */
+			            'sourceUrl': {
+			                type: 'text',
 			                options: undefined
 			            },
 			            /** . */
@@ -616,7 +622,9 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 				
 				'ids': string[]
 				
-				'source': string
+				'source'?: string| undefined | null
+				
+				'sourceUrl'?: string| undefined | null
 				
 				'theme'?: SpruceSchemas.HeartwoodViewControllers.v2021_02_11.Theme| undefined | null
 		}
@@ -637,7 +645,11 @@ declare module '@sprucelabs/spruce-core-schemas/build/.spruce/schemas/core.schem
 			            /** . */
 			            'source': {
 			                type: 'text',
-			                isRequired: true,
+			                options: undefined
+			            },
+			            /** . */
+			            'sourceUrl': {
+			                type: 'text',
 			                options: undefined
 			            },
 			            /** . */
