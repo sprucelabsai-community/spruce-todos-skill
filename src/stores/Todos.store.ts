@@ -89,7 +89,7 @@ export default class TodosStore extends AbstractStore<
 
 	protected async prepareRecord<
 		IncludePrivateFields extends boolean,
-		F extends SchemaFieldNames<FullSchema> = SchemaFieldNames<FullSchema>
+		F extends SchemaFieldNames<FullSchema> = SchemaFieldNames<FullSchema>,
 	>(
 		record: DatabaseTodo,
 		_options?: PrepareOptions<IncludePrivateFields, FullSchema, F>
