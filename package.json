@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@sprucelabs/data-stores": "^25.13.6",
-    "@sprucelabs/error": "^5.1.46",
+    "@sprucelabs/error": "^5.1.47",
     "@sprucelabs/globby": "^1.0.3",
     "@sprucelabs/heartwood-view-controllers": "^108.1.7",
     "@sprucelabs/mercury-client": "^41.0.142",
@@ -65,8 +65,8 @@
     "@sprucelabs/resolve-path-aliases": "^1.1.262",
     "@sprucelabs/semantic-release": "^4.0.8",
     "@sprucelabs/spruce-test-fixtures": "^60.1.51",
-    "@sprucelabs/test": "^8.0.29",
-    "@sprucelabs/test-utils": "^4.0.75",
+    "@sprucelabs/test": "^8.0.30",
+    "@sprucelabs/test-utils": "^4.0.76",
     "@types/node": "^20.9.2",
     "chokidar-cli": "^3.0.0",
     "concurrently": "^8.2.2",
@@ -78,7 +78,7 @@
     "ts-node": "^10.9.1",
     "tsc-watch": "^6.0.4",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.2"
   },
   "engines": {
     "yarn": "1.x"
