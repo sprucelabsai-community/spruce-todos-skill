@@ -1,3 +1,5 @@
+## [5.0.153](https://github.com/sprucelabsai-community/spruce-todos-skill/compare/v5.0.152...v5.0.153) (2024-03-13)
+
 ## [5.0.152](https://github.com/sprucelabsai-community/spruce-todos-skill/compare/v5.0.151...v5.0.152) (2024-03-12)
 
 ## [5.0.151](https://github.com/sprucelabsai-community/spruce-todos-skill/compare/v5.0.150...v5.0.151) (2024-03-12)
