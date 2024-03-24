@@ -2,6 +2,13 @@ import { EventFeatureListener } from '@sprucelabs/spruce-event-utils'
 
 const listeners: EventFeatureListener[] = [
     {
+        eventName: 'list',
+        eventNamespace: 'todos',
+        version: 'v2022_10_08',
+        callback: require('../../listeners/todos/list.v2022_10_08.listener').default,
+        isGlobal: require('../../listeners/todos/list.v2022_10_08.listener').isGlobal,
+    },
+    {
         eventName: 'did-boot',
         eventNamespace: 'skill',
         version: 'v2022_10_09',
@@ -14,13 +21,6 @@ const listeners: EventFeatureListener[] = [
         version: 'v2022_10_09',
         callback: require('../../listeners/skill/will-boot.v2022_10_09.listener').default,
         isGlobal: require('../../listeners/skill/will-boot.v2022_10_09.listener').isGlobal,
-    },
-    {
-        eventName: 'list',
-        eventNamespace: 'todos',
-        version: 'v2022_10_08',
-        callback: require('../../listeners/todos/list.v2022_10_08.listener').default,
-        isGlobal: require('../../listeners/todos/list.v2022_10_08.listener').isGlobal,
     },
     {
         eventName: 'add',
